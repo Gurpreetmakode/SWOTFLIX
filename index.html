@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SWOTFLIX — Team SWOT</title>
+  <meta name="description" content="A Netflix-inspired interactive SWOT presentation for Adam, Gurpreet, Sebastian and the team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="profile-screen-template">
+    <main class="profile-screen screen-fade">
+      <header class="topbar topbar-profile">
+        <button class="brand brand-button" type="button" aria-label="Go to profiles">SWOTFLIX</button>
+      </header>
+      <section class="profile-stage">
+        <h1>Who's presenting?</h1>
+        <div class="profile-grid" id="profileGrid"></div>
+        <p class="profile-hint">Choose a profile to open its SWOT story.</p>
+      </section>
+    </main>
+  </template>
+
+  <template id="dashboard-template">
+    <main class="dashboard screen-fade">
+      <header class="topbar dashboard-bar">
+        <button class="brand brand-button" type="button" id="homeButton" aria-label="Back to profiles">SWOTFLIX</button>
+        <div class="nav-actions">
+          <button class="nav-link" type="button" id="browseButton">Profiles</button>
+          <span class="mini-avatar" id="miniAvatar"></span>
+        </div>
+      </header>
+
+      <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="netflix-series">S  W  O  T  F  L  I  X&nbsp;&nbsp; O R I G I N A L</span>
+          <h1 id="heroName"></h1>
+          <p class="hero-tagline" id="heroTagline"></p>
+          <div class="hero-meta" id="heroMeta"></div>
+          <div class="hero-actions">
+            <button class="primary-btn" type="button" id="playStrengths">▶ Start with Top Episodes</button>
+            <button class="secondary-btn" type="button" id="aboutButton">ⓘ About this profile</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="rows" id="rows"></section>
+
+      <footer>
+        <span>SWOTFLIX • Interactive team SWOT presentation</span>
+      </footer>
+    </main>
+  </template>
+
+  <dialog id="detailModal" class="detail-modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-visual" id="modalVisual"></div>
+    <div class="modal-content">
+      <div class="modal-kicker" id="modalKicker"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+      <div class="modal-meta" id="modalMeta"></div>
+    </div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="tile-images.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
