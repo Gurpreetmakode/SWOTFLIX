@@ -24,7 +24,7 @@ const profileImages = {
 };
 
 function getProfileDisplayName(key) {
-  if (key === 'team') return 'The Team';
+  if (key === 'team') return 'Team Profile';
   return swotData[key].name;
 }
 
